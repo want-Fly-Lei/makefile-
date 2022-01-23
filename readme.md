@@ -1,0 +1,1 @@
+虽然写的简陋，还有一些拼音的错别字，但是这五层以此看完后，就足够入门了和写一下简单的makefile。想了解更多，可以去看 陈皓的[跟我一起写 Makefile](https://seisman.github.io/how-to-write-makefile/functions.html#subst)

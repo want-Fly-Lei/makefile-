@@ -1,0 +1,22 @@
+1.第一步创建一个叫做makefile的文件
+2.在makefile中 # 是注释
+几个过程:
+-E 预处理：把.h .c展开形成一个文件。宏定义直接替换 头文件 库文件 .i
+gcc -E hello.i -o hello.s
+
+-S 汇编：   .i 生成一个汇编代码文件  .S
+gcc -S hello.i -o hello.S
+
+-c 编译： .S 生成一个 .o（liunx） .obj（Windows）
+gcc -c hello.S -o hello.o
+
+-o 链接： .o 链接 .exe windows .elf(前面的可以省略，但是链接不可省略)
+gcc hello.o -o hello.out
+
+3.伪目标 .PHONY
+平时觉得这个没啥子用实际上必须的，前提：Makefile的target默认是文件；比如你想做一个make clean的需求，如果你没有clean这个文件夹到没事，
+如果有的话，那么clean将不会被执行。伪目标保证了不会访问文件，而是执行命令
+参考网址：https://www.cnblogs.com/idorax/p/9306528.html
+
+4.其他
+如果你只输入make不输入是哪一个目标文件，那么默认执行第一个目标文件
